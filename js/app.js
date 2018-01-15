@@ -6,7 +6,9 @@ let vm = new Vue ({
     message: "",
     link: 'http://www.remidatroa.com',
     success: true,
-    tags: ['full stack', 'front-end', 'graphic','motion']
+    tags: ['full stack', 'front-end', 'graphic','motion'],
+    firstName: 'pablo',
+    lastName: 'escobar'
   },
   methods: {
     close: function () {
@@ -14,6 +16,18 @@ let vm = new Vue ({
     },
     addTag: function() {
       this.tags.push('cinema4D')
+    }
+  },
+  computed: {
+    fullName: {
+      get: function () {
+        return this.firstName + ' ' + this.lastName
+      },
+      set: function (value) {
+        let parts = value.split(' ')
+        this.firstName = parts[0]
+        this.lastName = parts[1]
+      }
     }
   }
 })
