@@ -3,7 +3,8 @@ new Vue ({
   el: '#app',
   data: {
     message: 'hi bruh',
-    link: 'remidatroa.com',
-    success: true
+    link: 'http://www.remidatroa.com',
+    success: true,
+    tags: ['full stack', 'front-end', 'graphic','motion']
   }
 })
