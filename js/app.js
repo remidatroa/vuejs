@@ -1,5 +1,6 @@
 
-new Vue ({
+
+let vm = new Vue ({
   el: '#app',
   data: {
     message: "",
@@ -8,8 +9,11 @@ new Vue ({
     tags: ['full stack', 'front-end', 'graphic','motion']
   },
   methods: {
-    close: function() {
+    close: function () {
       this.success = false
+    },
+    addTag: function() {
+      this.tags.push('cinema4D')
     }
   }
 })
