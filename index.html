@@ -6,8 +6,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+
+  <div  id="app">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">remidatroa</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,7 +17,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" :href="link" :title="message" target="_blank"> home:site</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -24,8 +26,8 @@
       </form>
     </div>
   </nav>
-  <div class="container" id="app">
-    <a :href="link" :title="message" target="_blank"> {{message}}</a>
+  <div class="container">
+
 
     <div class="alert alert-primary alert-dismissible fade show" v-if="success" role="alert">
       <p>bruh done!</p>
@@ -33,6 +35,19 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
+
+    <row class="col-md">
+
+<div class="input-group mb-3" >
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3" v-model="message"> your name</span>
+  </div>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" v-model="message">
+
+</div>
+
+<p>Hi {{ message }}</p>
+    </row>
 
 
    <div class="row">
@@ -47,7 +62,7 @@
 
 
   </div>
-
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.js"></script>
