@@ -7,62 +7,63 @@
 </head>
 <body>
 
-  <div  id="app">
+  <div id="app">
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">remidatroa</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" :href="link" :title="message" target="_blank"> home:site</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-  <div class="container">
-
-
-    <div class="alert alert-primary alert-dismissible fade show" v-if="success" role="alert">
-      <p>bruh done!</p>
-      <button type="button" class="close" data-dismiss="alert" @click="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
+      <a class="navbar-brand" href="#">remidatroa</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" :href="link" :title="message" target="_blank"> home:site</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="alert alert-primary alert-dismissible fade show" v-if="success" role="alert">
+        <p>bruh done!</p>
+        <button type="button" class="close" data-dismiss="alert" @click="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="col-md">
+        <div class="input-group mb-3" >
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3" v-model="message"> your name</span>
+          </div>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" v-model="message">
+
+        </div>
+
+        <p>Hi {{ message }} !</p>
+      </div>
+
+
+      <div class="row">
+       <div class="col-sm">
+        <ul class="list-inline">
+          <li  class="list-inline-item" v-for="tag in tags">
+            <button type="button" class="btn btn-outline-secondary"> {{ tag }} </button>
+          </li>
+        </ul>
+        <input type="text" id="input" v-model="newTag">
+        <button @click="addTag" class="btn btn-light"> Add tag</button>
+       </div>
+      </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <button  class="btn btn-outline-success my-2 my-sm-0" type="submit" v-bind:title="title"> hover me</button>
+      </div>
     </div>
-
-    <row class="col-md">
-
-<div class="input-group mb-3" >
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon3" v-model="message"> your name</span>
-  </div>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" v-model="message">
-
-</div>
-
-<p>Hi {{ message }} !</p>
-    </row>
-
-
-   <div class="row">
-     <div class="col-sm">
-      <ul class="list-inline">
-        <li  class="list-inline-item" v-for="tag in tags">
-          <button type="button" class="btn btn-outline-secondary"> {{ tag }} </button>
-        </li>
-      </ul>
-      <input type="text" id="input" v-model="newTag">
-      <button @click="addTag" class="btn btn-light"> Add tag</button>
-    </div>
-  </div>
-
-
   </div>
 </div>
 
