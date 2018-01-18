@@ -6,6 +6,7 @@ let vm = new Vue ({
     message: "",
     link: 'http://www.remidatroa.com',
     success: true,
+    newTag: '',
     tags: ['full stack', 'front-end', 'graphic','motion']
   },
   methods: {
@@ -14,6 +15,9 @@ let vm = new Vue ({
     },
     addTag: function() {
       this.tags.push('cinema4D')
+    },
+    addTag() {
+      this.tags.push(this.newTag)
     }
   }
 })
