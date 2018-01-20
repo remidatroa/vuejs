@@ -14,6 +14,16 @@ Vue.component('e-liste', {
   }
 });
 
+Vue.component('coupon',{
+    template:`<input placeholder="enter coupon" @blur="onCouponApplied">`,
+
+    methods: {
+      onCouponApplied(){
+        alert('applied done!');
+      }
+    }
+});
+
 Vue.component('travel', {
   props: ['title', 'body'],
 
